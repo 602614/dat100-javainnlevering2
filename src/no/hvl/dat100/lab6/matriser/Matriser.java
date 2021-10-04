@@ -3,48 +3,84 @@ package no.hvl.dat100.lab6.matriser;
 public class Matriser {
 
 	// a)
-	public static void skrivUt(int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("skrivUt ikke implementert");
+	public static void skrivUtv1(int[][] matrise) {
+	    for(int i = 0; i < matrise.length; i++) {
+	        for(int j = 0; j < matrise.length; j++) {
+	            if (i == 0 || j == 0 || i == 2 || j == 2) {
+	                matrise[i][j] = 1;
+	            }
+	            else { 
+	                matrise[i][j] = 0;
+	            }
+	        }
+	    }
+
+	    for(int i = 0; i < matrise.length; i++) {
+	        for(int j = 0; j < matrise.length; j++) {
+	            System.out.print(matrise[i][j] + " ");
+	        }
+	        System.out.println(" ");
+	    }
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
-
-		// TODO
-		throw new UnsupportedOperationException("tilStreng ikke implementert");
 		
+		String stringen1 = " ";
+		
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				
+				if (i != matrise[i].length) {
+					
+					stringen1 += matrise[i][j];
+				}
+				
+			}
+		}
+		return stringen1;
 	}
-
-	// c)
+	
+	// C
 	public static int[][] skaler(int tall, int[][] matrise) {
 		
-		// TODO
-		throw new UnsupportedOperationException("skaler ikke implementert");
-	
+		int[][] nyMatrise = new int[matrise.length][matrise.length];
+		
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				
+				nyMatrise[i][j] = matrise[i][j] * tall;			
+			
+			
+			}	
+			
+		}
+		
+		return nyMatrise;
+
 	}
 
-	// d)
-	public static boolean erLik(int[][] a, int[][] b) {
-
-		// TODO
-		throw new UnsupportedOperationException("erLik ikke implementert");
+	
+	// D
+	public static boolean erLik(int[][] mat1, int[][] mat2) {
+		
+		boolean like = true;
+		
+		for (int i = 0; i < mat1.length; i++) {
+			for (int j = 0; j < mat1[i].length; j++) {
+								
+				if (mat1[i][j] == mat2[i][j]) { 
+				like = true;
+				
+			} else {
+				
+				like = false;
+			}
+			
+		}
+			
+		}
+		return like;
 	}
 	
-	// e)
-	public static int[][] speile(int[][] matrise) {
-
-		// TODO
-		throw new UnsupportedOperationException("speile ikke implementert");
-	
-	}
-
-	// f)
-	public static int[][] multipliser(int[][] a, int[][] b) {
-
-		// TODO
-		throw new UnsupportedOperationException("multipliser ikke implementert");
-	
-	}
 }
